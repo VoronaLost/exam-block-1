@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "h0CYXqdiu9GoctHv4La8NrRY0Zjxfy2LW3UaHbVDbXIQROGgXyFO48PpthivkH9EpA0JZgpL3ggDnI8zY+mc2w==",
+  "dgSpecHash": "9OSKdxbEyAoUWDWy/MMDaojmuwl251frbuLFSktMNs78PvxCI8moiyVpgcoS1OPjIJ5xvhepT5Q313aKipcP3Q==",
   "success": true,
-  "projectFilePath": "D:\\study\\SHARP\\exam-block-1\\exam-block-1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\study\\SHARP\\exam-block1\\exam-block-1\\exam-block-1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vorona\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Vorona\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Vorona\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Vorona\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

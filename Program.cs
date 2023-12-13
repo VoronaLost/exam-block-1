@@ -17,26 +17,33 @@ int inputnumber(string text, int condition)
 return finalNumber;
 }
 
-string[] inputArray(int numberLength)
+string[] getArray(int option)
 {
-    string[] arr = new string[numberLength];
-    for (int i=0; i < numberLength; i++)
+    string[] sample = {"One", "two", "three", "four", "five",
+ "Once", "I", "caught", "a", "fish", "alive"};
+    if (option == 2) return sample;
+    else
+    {
+    int ammount = inputnumber("Введите количество элементов в массиве:",  int.MaxValue);
+    string[] arr = new string[ammount];
+    for (int i=0; i < ammount; i++)
     {
         Console.WriteLine($"Введите элемент массива №{i+1}:");
         arr[i] = Console.ReadLine();
     }
     return arr;
+    }
 }
 
 string[] changedArray(string[] array)
 {
-    int p = 0;
-    int amount = 3;
+    int newSize = 0;
+    int symbols = 3;
     for (int i = 0; i < array.Length; i++)
-        if (array[i].Length <= amount) p +=1;
-    string[] newArray = new string[p];
+        if (array[i].Length <= symbols) newSize +=1;
+    string[] newArray = new string[newSize];
     for (int j = 0, k = 0; j < array.Length; j++)
-        if (array[j].Length <= amount)
+        if (array[j].Length <= symbols)
         {
             newArray[k] = array[j]; 
             k +=1;
@@ -49,21 +56,10 @@ void printarray(string[] arr, string text)
     Console.WriteLine($"{text}");
     Console.WriteLine($"\"{String.Join("\" \"", arr)}\"");
 }
+
 int upperLimit = 2;
-string[] sample = {"One", "two", "three", "four", "five",
- "Once", "I", "caught", "a", "fish", "alive"};
 int choice = inputnumber("Для ввода массива с клавиатуры нажмите 1, для использования готового массива нажмите 2", upperLimit);
-if (choice == 1)
-{
-int ammount = inputnumber("Введите количество элементов в массиве:",  int.MaxValue);
-string[] array = inputArray(ammount);
-printarray(array, "Вы ввели массив:");
+string[] array = getArray(choice);
+printarray(array, "Изначальный массив:");
 string[] newArray = changedArray(array);
 printarray(newArray, "Новый массив:");
-}
-else
-{
-printarray(sample, "Вы ввели массив:");
-string[] newArray = changedArray(sample);
-printarray(newArray, "Новый массив:");
-}
