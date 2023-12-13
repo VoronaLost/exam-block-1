@@ -1,21 +1,26 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-string[] inputnumber()
+int inputnumber(string text, int condition)
 {
     bool isNumber = false;
-    Console.WriteLine($"Введите количество элементов в массиве:");
+    Console.WriteLine($"{text}");
     int finalNumber=0;
     while (isNumber == false)
         {
         string input = Console.ReadLine();
         isNumber = int.TryParse(input, out finalNumber);
-        if (finalNumber <= 0) isNumber = false;
+        if (finalNumber <= 0 | finalNumber > condition) isNumber = false;
         if (isNumber==false)
-        Console.WriteLine($"Неверный формат, введите натуральное значение");
+        Console.WriteLine($"Неверный формат, введите допустимое значение");
         }
-    string[] arr = new string[finalNumber];
-    for (int i=0; i< finalNumber; i++)
+return finalNumber;
+}
+
+string[] inputArray(int numberLength)
+{
+    string[] arr = new string[numberLength];
+    for (int i=0; i < numberLength; i++)
     {
         Console.WriteLine($"Введите элемент массива №{i+1}:");
         arr[i] = Console.ReadLine();
@@ -44,10 +49,21 @@ void printarray(string[] arr, string text)
     Console.WriteLine($"{text}");
     Console.WriteLine($"\"{String.Join("\" \"", arr)}\"");
 }
-
-
-string[] array = inputnumber();
+int upperLimit = 2;
+string[] sample = {"One", "two", "three", "four", "five",
+ "Once", "I", "caught", "a", "fish", "alive"};
+int choice = inputnumber("Для ввода массива с клавиатуры нажмите 1, для использования готового массива нажмите 2", upperLimit);
+if (choice == 1)
+{
+int ammount = inputnumber("Введите количество элементов в массиве:",  int.MaxValue);
+string[] array = inputArray(ammount);
 printarray(array, "Вы ввели массив:");
 string[] newArray = changedArray(array);
 printarray(newArray, "Новый массив:");
-
+}
+else
+{
+printarray(sample, "Вы ввели массив:");
+string[] newArray = changedArray(sample);
+printarray(newArray, "Новый массив:");
+}
